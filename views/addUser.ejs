@@ -1,0 +1,115 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+
+		<!-- Website CSS style -->
+		<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+
+		<!-- Website Font style -->
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+		
+		<!-- Google Fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/stylesheets/add-user.css" />
+        <link rel="stylesheet" href="/stylesheets/navbar.css" />
+
+		<title>Add/Update User</title>
+	</head>
+	<body>
+		<%- include('navbar.ejs') %>
+
+		<div class="container">
+			<div class="row main">
+				<div class="panel-heading">
+	               <div class="panel-title text-center">
+						<h1 class="title"><% if(user){ %> Update User <% } else { %> Add new User <% } %></h1>
+	               		<hr />
+	               	</div>
+	            </div> 
+				<div class="main-login main-center">
+					<form class="form-horizontal" method="post" action=<% if(user){ %> <%"=/users/:user.id/edit"%> <% } else { %> "/users/add" <% } %>>
+						<div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">USERNAME</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="USERNAME" id="USERNAME"  placeholder="Enter User Name" value=<% if(user){ %> <%= user.USERNAME %> <% } else { %> "" <% } %> />
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="username" class="cols-sm-2 control-label">EMAIL</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="EMAIL" id="EMAIL"  placeholder="Enter e-mail" value=<% if(user){ %> <%= user.EMAIL %> <% } else { %> "" <% } %>/>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="username" class="cols-sm-2 control-label">FIRSTNAME</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="FIRSTNAME" id="FIRSTNAME"  placeholder="Enter First Name" value=<% if(user){ %> <%= user.FIRSTNAME %> <% } else { %> "" <% } %>/>/>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="username" class="cols-sm-2 control-label">LASTNAME</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="LASTNAME" id="LASTNAME"  placeholder="Enter Last Name" value=<% if(user){ %> <%= user.LASTNAME %> <% } else { %> "" <% } %>/>/>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="username" class="cols-sm-2 control-label">BIRTHDATE</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+									<input type="date" class="form-control" name="BIRTHDATE" id="BIRTHDATE"  placeholder="Enter Birth Date" value=<% if(user){ %> <%= user.BIRTHDATE %> <% } else { %> "" <% } %>/>/>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="username" class="cols-sm-2 control-label">DESCRIPTION</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="DESCRIPTION" id="DESCRIPTION"  placeholder="Enter Description" value=<% if(user){ %> <%= user.DESCRIPTION %> <% } else { %> "" <% } %>/>/>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="username" class="cols-sm-2 control-label">IMGURL</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="IMGURL" id="IMGURL"  placeholder="Enter imgurl" value=<% if(user){ %> <%= user.IMGURL %> <% } else { %> "" <% } %>/>/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group ">
+							<button type="submit" class="btn btn-primary btn-lg btn-block login-button"> <% if(user){ %> Update <% } else { %> Add <% } %></button>
+						</div>
+			
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="assets/js/bootstrap.js"></script>
+	</body>
+</html>
